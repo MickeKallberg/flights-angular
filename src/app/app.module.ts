@@ -1,18 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { FlightListComponent } from './flight-list/flight-list.component';
+import { TimePipe } from './pipe/time.pipe';
+import { ClockPipe } from './pipe/clock.pipe';
+import { FlightService } from './shared/flight.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlightListComponent,
+    TimePipe,
+    ClockPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [FlightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
